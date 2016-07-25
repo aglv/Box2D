@@ -15,6 +15,5 @@
 *.orig
 **/xcuserdata
 imgui.ini
-**/xcshareddata
 *.ini
 *.lastcodeanalysissucceeded
