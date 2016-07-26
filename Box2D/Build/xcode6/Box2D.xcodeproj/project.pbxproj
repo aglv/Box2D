@@ -441,6 +441,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		719200CA1D46645F003C188A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80B51B661CC74B00008DDE73 /* CoreVideo.framework */,
+				80A3907B1852F2D100E19E2B /* IOKit.framework */,
+				80A390771852F2A000E19E2B /* Cocoa.framework */,
+				80A390781852F2A000E19E2B /* CoreFoundation.framework */,
+				80BB8A7A141C3FA700F1753A /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8069C937184EFC630038E156 /* GLFW */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,16 +748,12 @@
 		80FF01C7141C3D980059E59D = {
 			isa = PBXGroup;
 			children = (
+				80BB8922141C3E5900F1753A /* Box2D */,
 				806AF7831CC9EA5F00D3F7E1 /* imgui */,
-				80B51B661CC74B00008DDE73 /* CoreVideo.framework */,
-				80A3907B1852F2D100E19E2B /* IOKit.framework */,
-				80A390771852F2A000E19E2B /* Cocoa.framework */,
-				80A390781852F2A000E19E2B /* CoreFoundation.framework */,
 				8069C937184EFC630038E156 /* GLFW */,
-				80BB8A7A141C3FA700F1753A /* OpenGL.framework */,
 				80BB8A35141C3E8500F1753A /* Testbed */,
 				80BB8A31141C3E7B00F1753A /* HelloWorld */,
-				80BB8922141C3E5900F1753A /* Box2D */,
+				719200CA1D46645F003C188A /* Frameworks */,
 				80FF01D3141C3D980059E59D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -930,6 +938,7 @@
 				80FF01CE141C3D980059E59D /* Sources */,
 				80FF01CF141C3D980059E59D /* Frameworks */,
 				80FF01D0141C3D980059E59D /* Headers */,
+				719200CE1D473C94003C188A /* Copy Headers */,
 			);
 			buildRules = (
 			);
@@ -946,7 +955,7 @@
 		80FF01C9141C3D980059E59D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					80B51B391CC74762008DDE73 = {
 						CreatedOnToolsVersion = 6.4;
@@ -973,6 +982,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		719200CE1D473C94003C188A /* Copy Headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$PROJECT_DIR/../..\"\nfind Box2D -name '*.h' -print | cpio -pdlv \"$BUILT_PRODUCTS_DIR/include\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		805900B4184EEF2E00C8ECA3 /* Sources */ = {
@@ -1106,6 +1132,7 @@
 		805900BA184EEF2E00C8ECA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = NO;
@@ -1131,6 +1158,7 @@
 		805900BB184EEF2E00C8ECA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = NO;
@@ -1153,6 +1181,7 @@
 		80B51B3C1CC74762008DDE73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1184,6 +1213,7 @@
 		80B51B3D1CC74762008DDE73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1329,6 +1359,7 @@
 		80FF01D7141C3D980059E59D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -1340,6 +1371,7 @@
 		80FF01D8141C3D980059E59D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;

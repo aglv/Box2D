@@ -271,6 +271,9 @@ void b2Island::Solve(b2Profile* profile, const b2TimeStep& step, const b2Vec2& g
 	contactSolver.StoreImpulses();
 	profile->solveVelocity = timer.GetMilliseconds();
 
+    // Store world pointer
+    b2World* world = m_bodyCount? m_bodies[0]->GetWorld() : NULL;
+    
 	// Integrate positions
 	for (int32 i = 0; i < m_bodyCount; ++i)
 	{
@@ -281,16 +284,16 @@ void b2Island::Solve(b2Profile* profile, const b2TimeStep& step, const b2Vec2& g
 
 		// Check for large velocities
 		b2Vec2 translation = h * v;
-		if (b2Dot(translation, translation) > b2_maxTranslationSquared)
+		if (b2Dot(translation, translation) > world->GetMaxTranslationSquared())
 		{
-			float32 ratio = b2_maxTranslation / translation.Length();
+			float32 ratio = world->GetMaxTranslation() / translation.Length();
 			v *= ratio;
 		}
 
 		float32 rotation = h * w;
-		if (rotation * rotation > b2_maxRotationSquared)
+		if (rotation * rotation > world->GetMaxRotationSquared())
 		{
-			float32 ratio = b2_maxRotation / b2Abs(rotation);
+			float32 ratio = world->GetMaxRotationSquared() / b2Abs(rotation);
 			w *= ratio;
 		}
 
@@ -469,6 +472,8 @@ void b2Island::SolveTOI(const b2TimeStep& subStep, int32 toiIndexA, int32 toiInd
 
 	float32 h = subStep.dt;
 
+    b2World *world = m_bodyCount? m_bodies[0]->GetWorld() : NULL;
+    
 	// Integrate positions
 	for (int32 i = 0; i < m_bodyCount; ++i)
 	{
@@ -479,16 +484,16 @@ void b2Island::SolveTOI(const b2TimeStep& subStep, int32 toiIndexA, int32 toiInd
 
 		// Check for large velocities
 		b2Vec2 translation = h * v;
-		if (b2Dot(translation, translation) > b2_maxTranslationSquared)
+		if (b2Dot(translation, translation) > world->GetMaxTranslationSquared())
 		{
-			float32 ratio = b2_maxTranslation / translation.Length();
+			float32 ratio = world->GetMaxTranslation() / translation.Length();
 			v *= ratio;
 		}
 
 		float32 rotation = h * w;
-		if (rotation * rotation > b2_maxRotationSquared)
+		if (rotation * rotation > world->GetMaxRotationSquared())
 		{
-			float32 ratio = b2_maxRotation / b2Abs(rotation);
+			float32 ratio = world->GetMaxRotation() / b2Abs(rotation);
 			w *= ratio;
 		}
 

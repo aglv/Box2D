@@ -204,6 +204,20 @@ public:
 
 	/// Get the current profile.
 	const b2Profile& GetProfile() const;
+    
+    /// Get the max translation per step
+    const float32 GetMaxTranslation() const;
+    const float32 GetMaxTranslationSquared() const;
+    
+    /// Set the max translation per step
+    void SetMaxTranslation(float32 f);
+    
+    /// Get the max rotation per step
+    const float32 GetMaxRotation() const;
+    const float32 GetMaxRotationSquared() const;
+
+    /// Set the max rotation per step
+    void SetMaxRotation(float32 f);
 
 	/// Dump the world into the log file.
 	/// @warning this should be called outside of a time step.
@@ -261,6 +275,9 @@ private:
 	bool m_stepComplete;
 
 	b2Profile m_profile;
+    
+    float32 maxTranslation, maxTranslationSquared;
+    float32 maxRotation, maxRotationSquared;
 };
 
 inline b2Body* b2World::GetBodyList()

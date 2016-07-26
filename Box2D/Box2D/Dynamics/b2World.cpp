@@ -59,6 +59,9 @@ b2World::b2World(const b2Vec2& gravity)
 	m_inv_dt0 = 0.0f;
 
 	m_contactManager.m_allocator = &m_blockAllocator;
+    
+    SetMaxTranslation(b2_maxTranslation);
+    SetMaxRotation(b2_maxRotation);
 
 	memset(&m_profile, 0, sizeof(b2Profile));
 }
@@ -1295,6 +1298,38 @@ void b2World::ShiftOrigin(const b2Vec2& newOrigin)
 	}
 
 	m_contactManager.m_broadPhase.ShiftOrigin(newOrigin);
+}
+
+const float32 b2World::GetMaxTranslation() const
+{
+    return maxTranslation;
+}
+
+const float32 b2World::GetMaxTranslationSquared() const
+{
+    return maxTranslationSquared;
+}
+
+void b2World::SetMaxTranslation(float32 f)
+{
+    maxTranslation = f;
+    maxTranslationSquared = f*f;
+}
+
+const float32 b2World::GetMaxRotation() const
+{
+    return maxRotation;
+}
+
+const float32 b2World::GetMaxRotationSquared() const
+{
+    return maxRotationSquared;
+}
+
+void b2World::SetMaxRotation(float32 f)
+{
+    maxRotation = f;
+    maxRotationSquared = f*f;
 }
 
 void b2World::Dump()
