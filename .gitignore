@@ -17,3 +17,4 @@
 imgui.ini
 *.ini
 *.lastcodeanalysissucceeded
+Box2D/Build/xcode6/build

@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "32BC8F1EBE6195751A3AF787748A5E3CF9A9BEDE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "69C1FC38545DD645947416F479955504377CDA15" : 9223372036854775807,
+    "32BC8F1EBE6195751A3AF787748A5E3CF9A9BEDE" : 9223372036854775807,
+    "F5995C333D295747A390F7AEBC863D06F12CA569" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DECA9DBA-C48F-4DFB-B107-7AC5682FC508",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "69C1FC38545DD645947416F479955504377CDA15" : "",
+    "32BC8F1EBE6195751A3AF787748A5E3CF9A9BEDE" : "Box2D\/",
+    "F5995C333D295747A390F7AEBC863D06F12CA569" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Box2D",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Box2D\/Build\/xcode6\/Box2D.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:aglv\/Box2D.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "32BC8F1EBE6195751A3AF787748A5E3CF9A9BEDE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:spalte\/NIMPR.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "69C1FC38545DD645947416F479955504377CDA15"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:volz.io\/Cardioband.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F5995C333D295747A390F7AEBC863D06F12CA569"
+    }
+  ]
+}
